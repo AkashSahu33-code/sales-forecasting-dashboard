@@ -90,7 +90,7 @@ streamlit run app.py
 ## 👤 Author
 
 **Akash Sahu**
-B.Tech Biomedical Engineering, NIT Raipur
+B.Tech, NIT Raipur
 
 ---
 
