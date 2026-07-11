@@ -94,4 +94,4 @@ B.Tech, NIT Raipur
 
 ---
 
-*Built as part of a Data Science internship project — Week 3 & 4: End-to-End Sales Forecasting & Demand Intelligence System.*
+
