@@ -10,17 +10,17 @@ st.set_page_config(page_title="Sales Forecasting Dashboard", layout="wide")
 # ------------------ LOAD DATA (cached) ------------------
 @st.cache_data
 def load_data():
-    df = pd.read_csv('dashboard_data/cleaned_sales.csv', parse_dates=['Order Date', 'Ship Date'])
-    monthly = pd.read_csv('dashboard_data/monthly_sales.csv', index_col=0, parse_dates=True)
-    comparison = pd.read_csv('dashboard_data/model_comparison.csv')
-    segment_forecasts = pd.read_csv('dashboard_data/segment_forecasts.csv', parse_dates=['Date'])
-    anomalies = pd.read_csv('dashboard_data/anomaly_data.csv', index_col=0, parse_dates=True)
-    clusters = pd.read_csv('dashboard_data/cluster_data.csv')
+    df = pd.read_csv('cleaned_sales.csv', parse_dates=['Order Date', 'Ship Date'])
+    monthly = pd.read_csv('monthly_sales.csv', index_col=0, parse_dates=True)
+    comparison = pd.read_csv('model_comparison.csv')
+    segment_forecasts = pd.read_csv('segment_forecasts.csv', parse_dates=['Date'])
+    anomalies = pd.read_csv('anomaly_data.csv', index_col=0, parse_dates=True)
+    clusters = pd.read_csv('cluster_data.csv')
     return df, monthly, comparison, segment_forecasts, anomalies, clusters
 
 @st.cache_resource
 def load_model():
-    with open('dashboard_data/sarima_model.pkl', 'rb') as f:
+    with open('sarima_model.pkl', 'rb') as f:
         return pickle.load(f)
 
 df, monthly, comparison, segment_forecasts, anomalies, clusters = load_data()
